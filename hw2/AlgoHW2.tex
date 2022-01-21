@@ -1,0 +1,375 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\author{}
+\date{}
+
+\begin{document}
+
+\hypertarget{hw2}{%
+\subparagraph{HW2}\label{hw2}}
+
+\hypertarget{zhengmao-zhang}{%
+\subparagraph{Zhengmao Zhang}\label{zhengmao-zhang}}
+
+\hypertarget{problem-1-jarvis-march-gift-wrapping-algorithm}{%
+\paragraph{Problem 1: Jarvis March (Gift Wrapping
+Algorithm)}\label{problem-1-jarvis-march-gift-wrapping-algorithm}}
+
+\hypertarget{a-10-points-give-pseudocode-describing-the-jarvis-march-algorithm-a-brief-description-of-how-it-works-and-explain-its-best-and-worst-case-efficiency}{%
+\subparagraph{(a) {[}10 points{]} Give pseudocode describing the Jarvis
+March algorithm, a brief description of how it works, and explain its
+best and worst case
+efficiency.}\label{a-10-points-give-pseudocode-describing-the-jarvis-march-algorithm-a-brief-description-of-how-it-works-and-explain-its-best-and-worst-case-efficiency}}
+
+Answer:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{algorithm Grahamscan(S) {-}\textgreater{} res is}
+\NormalTok{	// S is the set of points S is S[x][y] set}
+\NormalTok{	// res is the opint }
+\NormalTok{	res = []}
+\NormalTok{	n = S.size() // n is number of all points}
+	
+\NormalTok{	// in this part we need find the lowest point, OR}
+\NormalTok{	// highest point}
+\NormalTok{	leftstPoint = S[0] //its start point}
+\NormalTok{	for s in all S do}
+\NormalTok{		leftestPoint = lefterPoint(lowestPoint, s)}
+	
+\NormalTok{	// this part will triversal all point set}
+\NormalTok{	firstPoint = leftestPoint}
+\NormalTok{	secondPoint = NULL}
+\NormalTok{	repeat:}
+\NormalTok{		res.push(firstPoint)}
+\NormalTok{		secondPoint = S[firstPoint.Next]}
+\NormalTok{		for s in S do}
+\NormalTok{			if counterClockWise(firstPoint, s, secondPoint) do}
+\NormalTok{				secondPoint = s}
+\NormalTok{		firstPoint = secondPoint}
+\NormalTok{ until firstPoint == leftestPoint}
+\NormalTok{// this function is to test if the point s is in the line (that point1 and point2 connect) left}
+\NormalTok{function counterClockWise(point1, point s, point2) {-}\textgreater{} bool do}
+\NormalTok{	return ((point2.x {-} point1.x) * (s.y {-} point1.y) {-} (point2.y {-} point1.y) * (c.x {-} point1.x)) \textless{} 0}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{TIME COMPEXITY} \textbf{O(nh )} h is the convex hull size
+
+Worst Case \textbf{Θ(n\^{}2)}
+
+Best case \textbf{O(nh)} h is the convex hull
+
+for the \textbf{best case}, the convex hull is a triangle, and only have
+3 point on hull.
+
+for the \textbf{worest case}, its all points are in solution hull.
+
+\begin{figure}
+\centering
+\includegraphics{/Users/zhengmao/Library/Application Support/typora-user-images/image-20220116234735028.png}
+\caption{}
+\end{figure}
+
+\hypertarget{b-5-points-give-an-example-input-on-which-jarvis-march-will-perform-significantly-better-than-grahams-scan-and-explain-why-it-will-perform-better}{%
+\subparagraph{(b) {[}5{]} points Give an example input on which Jarvis
+March will perform significantly better than Graham's scan and explain
+why it will perform
+better.}\label{b-5-points-give-an-example-input-on-which-jarvis-march-will-perform-significantly-better-than-grahams-scan-and-explain-why-it-will-perform-better}}
+
+Answer:
+
+Data Set: {[}{[}0,0{]} , {[}100, 0{]}, {[}0, 100{]},
+{[}1,1{]},{[}2,2{]}, {[}3,3{]}, {[}4,4{]}\ldots\ldots{[}49,49{]},
+{[}50,25{]}, {[}25,50{]}, {[}25,37.5{]}, {[}37.5,25{]}{]}
+
+There are 3 lines in the data set, one is X=Y, another is
+{[}50,0{]}-\textgreater{[}0, 100{]}, and {[}0,50{]} -\textgreater{}
+{[}100,0{]}
+
+for this data set, the convex hall is \{{[}0,0{]}, {[}100, 0{]},
+{[}0,100{]}\}
+
+for the \textbf{Jarvis March} , this data set is best case for Jarvis
+March. the complelity is O(hn), h = 3. Its almost to O(n)
+
+for the \textbf{Graham's scan},it is worest case for it, cuz there are 3
+lines start at convex hall. So in the algorithm. the complexity is O(n
+log n)
+
+\hypertarget{c-5-points-give-an-example-input-on-which-grahams-scan-will-perform-significantly-better-than-jarvis-march-and-explain-why-it-will-perform-better}{%
+\subparagraph{(c) {[}5{]} points Give an example input on which Graham's
+Scan will perform significantly better than Jarvis March and explain why
+it will perform
+better.}\label{c-5-points-give-an-example-input-on-which-grahams-scan-will-perform-significantly-better-than-jarvis-march-and-explain-why-it-will-perform-better}}
+
+Data set: {[}{[}0, 0{]}, {[}1,0{]}, {[}2,0{]}, {[}3,
+0{]}\ldots\ldots{[}100,0{]}{]}, {[}, {[}0,1{]}, {[}0,2{]},
+{[}0,3{]}\ldots\ldots{[}0,100{]}{]}, {[}{[}99, 1{]},{[}98, 2{]},
+{[}97,3{]}, \ldots\ldots{[}1,99{]}{]}
+
+In this data set, the convex hall is all points in this set.
+
+for the \textbf{Jarvis March} , this data set is worst case for Jarvis
+March. cuz the h is n, so the complexity is O(n\^{}2)
+
+for the \textbf{Graham's scan},it is best case for it, cuz there are 3
+lines start at convex hall. So in the algorithm. the complexity is O(n
+log n)
+
+\hypertarget{problem-2-find-the-missing-number}{%
+\paragraph{Problem 2: Find the Missing
+Number}\label{problem-2-find-the-missing-number}}
+
+\hypertarget{a-5-points-give-an-efficient-algorithm-for-finding-the-missing-number-show-its-complexity-and-argue-its-correctness-you-should-try-for-on-time-less-efficient-solutions-will-still-get-partial-credit}{%
+\subparagraph{(a) {[}5 points{]} Give an efficient algorithm for finding
+the missing number, show its complexity, and argue its correctness. (You
+should try for O(n)-time, less efficient solutions will still get
+partial
+credit)}\label{a-5-points-give-an-efficient-algorithm-for-finding-the-missing-number-show-its-complexity-and-argue-its-correctness-you-should-try-for-on-time-less-efficient-solutions-will-still-get-partial-credit}}
+
+Answer:
+
+if its a sorted list, we can just do a compare function to make a{[}i{]}
+compare with i.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dataSet = []}
+\NormalTok{algorithm getMissingNumber() is:}
+\NormalTok{	// n is the size of arr DataSet}
+\NormalTok{	n = dataSet.size}
+\NormalTok{	for i from 0 to n {-} 1 do}
+\NormalTok{  	if dataSet[i] is not i then}
+\NormalTok{  		// attention: should return i, its not dataSet[i], cuz dataSet i is exist}
+\NormalTok{  		return i}
+	
+\end{Highlighting}
+\end{Shaded}
+
+In this algorithm, its ofc \textbf{O(n)} cuz its only one loop from 0 to
+n, so its \textbf{O(n)}
+
+if its a \textbf{unsorted} list, we need get the sum of range n - 1
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dataSet = []}
+\NormalTok{algorithm getMissingNumber() is:}
+\NormalTok{	// n is the size of arr dataSet}
+\NormalTok{	n = dataSet.size}
+\NormalTok{	sum = 0}
+\NormalTok{	for i in range(0, n {-} 1) do}
+\NormalTok{		sum += i}
+\NormalTok{	for each dates in dataSet do}
+\NormalTok{		sum {-}= dates}
+\NormalTok{	return sum}
+\end{Highlighting}
+\end{Shaded}
+
+Its \textbf{O(n)}, cuz the get sum part is \textbf{O(n)}, and the search
+part is \textbf{O(n)}, so its \textbf{O(n)}
+
+\#\#\#\#\#
+
+Answer: Use XOR operator.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dataSet = []}
+\NormalTok{algorithm getMissingNumber() is:}
+\NormalTok{	// n is the size of arr dataSet}
+\NormalTok{	n = dataSet.size}
+	
+\NormalTok{	x1 = dataSet[0]}
+\NormalTok{	x2 = 1}
+\NormalTok{	for i in range(0, n {-} 2) do}
+\NormalTok{		x1 = x1 XOR dataSet[i]}
+\NormalTok{	for i in range(1, n {-} 1) do}
+\NormalTok{		x2 = x2 XOR dataSet[i]}
+\NormalTok{	return x1 XOR x2}
+	
+\end{Highlighting}
+\end{Shaded}
+
+cuz XOR can delete repeat number.
+
+\begin{quote}
+like x1 = x2 XOR x3
+
+if we wanna get the x2, we can just x1 XOR x3
+\end{quote}
+
+for complexity, TIME is O(n), NSPACE is O(1). Cuz for the 1st XOR loop,
+its O(n), the 2nd same. So its O(n)
+
+\hypertarget{b-10-points-for-this-question-you-are-not-allowed-to-access-an-entire-integer-with-a-single-operation-the-elements-of-the-list-are-represented-in-binary-and-the-only-operation-you-can-use-to-access-them-is-getbinarydigitaij-which-returns-the-jth-bit-of-element-ai-which-runs-in-constant-time-give-an-efficient-algorithm-for-finding-the-missing-number-under-these-constraints-show-its-complexity-and-argue-its-correctness-you-should-try-for-on-time-and-olog-n-space-less-efficient-solutions-will-still-get-partial-credit}{%
+\subparagraph{(b) {[}10 points{]} For this question you are not allowed
+to access an entire integer with a single operation. The elements of the
+list are represented in binary, and the only operation you can use to
+access them is GetBinaryDigit(A{[}i{]},j) which returns the jth bit of
+element A{[}i{]} which runs in constant time. Give an efficient
+algorithm for finding the missing number under these constraints, show
+its complexity, and argue its correctness. (You should try for O(n)-time
+and O(log n)-space, less efficient solutions will still get partial
+credit)}\label{b-10-points-for-this-question-you-are-not-allowed-to-access-an-entire-integer-with-a-single-operation-the-elements-of-the-list-are-represented-in-binary-and-the-only-operation-you-can-use-to-access-them-is-getbinarydigitaij-which-returns-the-jth-bit-of-element-ai-which-runs-in-constant-time-give-an-efficient-algorithm-for-finding-the-missing-number-under-these-constraints-show-its-complexity-and-argue-its-correctness-you-should-try-for-on-time-and-olog-n-space-less-efficient-solutions-will-still-get-partial-credit}}
+
+\hypertarget{example-if-we-run-getbinarydigitaij-with-ai--29-and-j--2-it-would-return-a-0-since-29--11101}{%
+\subparagraph{Example: If we run GetBinaryDigit(A{[}i{]},j) with
+A{[}i{]} = 29 and j = 2, it would return a 0 since 29 =
+11101.}\label{example-if-we-run-getbinarydigitaij-with-ai--29-and-j--2-it-would-return-a-0-since-29--11101}}
+
+Answer:
+
+If the data set is a sorted
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{A = []}
+\NormalTok{algorithm getMissingNumber() is:}
+\NormalTok{	prelastdig = 1}
+\NormalTok{	for i in range(n):}
+\NormalTok{		if(GetBinaryDigit(A[i],2).lastdig == prelastdig)}
+\NormalTok{			return A[i] {-} 1}
+\end{Highlighting}
+\end{Shaded}
+
+If its not sorted.
+
+for this problem, we can know, for every n size set, we get the unsigned
+number num{[}i{]}'s length in binary, the max length of
+nums{[}i{]}ToBi.toString.length is lg(n + 1) - 1. so we need find the
+solution in this part.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{algorithm getMissingNumber(subarr, n) is:}
+\NormalTok{	if n is 1}
+\NormalTok{		return 1 {-} subarr[0]}
+\NormalTok{		leftsubarr = []}
+\NormalTok{		rightsubarr = []}
+\NormalTok{		highersite \textless{}{-} ceiling( lg(n+1) ) {-} 1}
+\NormalTok{		for all num in subarr do}
+\NormalTok{			if num[highersite] is 0 do}
+\NormalTok{				leftsubarr.append(num)}
+\NormalTok{			else}
+\NormalTok{				rightsubarr.append(num)}
+\NormalTok{		if leftsubset.size() \textless{} pow(highersite, 2)}
+\NormalTok{			getMissingNumber(leftsubarr, pow(highersite, 2) {-} 1)}
+\NormalTok{		else}
+\NormalTok{			getMissingNumber(rightsubarr, n {-} pow(highersite, 2))}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{PSPACE(LogN)}, cuz its a recurssion function. so we find they
+always have the half size of current sub arr, so its run in Log n
+\textbf{SPACE}
+
+For the \textbf{PTIME(N)}, we can get the size of input is (2\^{}(log (n
++ 1) - 1)) - 1
+
+then we can get \textbf{T(n)} \textless= T((2\^{}lg (n + 1)) - 1)
+
+cuz 2\^{} lg(n + 1) ≈ n
+
+T(n) = aO(n) - T(1) = \textbf{O(n)}
+
+\end{document}
